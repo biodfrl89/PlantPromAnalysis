@@ -20,55 +20,68 @@ if (is.null(opt$file)) {
 
 library(seqinr)
 
+test="test"
+
 #Se carga la base de datos PLACE y se suprime la primer columna que tiene un dato desconocido sin sentido
-db <- read.table(file = "place.dat", header = FALSE)
+db <- read.table(file = "DATABASES/place_raw.txt", header = FALSE)
 db$V1 <- NULL
 #Se nombran las columnas
 colnames(db) <- c("Name", "Motif", "Length", "ID")
 #Se lee la secuencia a analizar y se cambia a mayusculas para que no haya problema
-prom_lea61 <- read.fasta(file = "promotor_atlea61.fasta", seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
-prom_lea61 <- toupper(prom_lea61)
+promoter <- read.fasta(file = opt$file, seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
+promoter <- read.fasta(file = "atlea45.fasta", seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
+promoter <- toupper(promoter)
 
-#ASIGNACION DE BASES DEENERADAS
+#ASIGNACION DE BASES DEGENERADAS
 {
-	deg_bases <- list(W = c("A", "T"),
-										S = c("C", "G"),
-										M = c("A", "C"),
-										K = c("G", "T"),
-										R = c("A", "G"),
-										Y = c("C", "T"),
-										B = c("C", "G", "T"),
-										D = c("A", "G", "T"),
-										H = c("A", "C", "T"),
-										V = c("A", "C", "G"),
-										N = c("A", "C", "G", "T")
-	)
+  deg_bases <- list(W = c("A", "T"),
+                    S = c("C", "G"),
+                    M = c("A", "C"),
+                    K = c("G", "T"),
+                    R = c("A", "G"),
+                    Y = c("C", "T"),
+                    B = c("C", "G", "T"),
+                    D = c("A", "G", "T"),
+                    H = c("A", "C", "T"),
+                    V = c("A", "C", "G"),
+                    N = c("A", "C", "G", "T")
+  )
 }
 
 #PREPARACIÓN DEL MOTIVO A BUSCAR
 #Se declaran las variables vacias a utilizar
 pos_motifs <- list(0)
-res <- vector(mode = "integer")
 #Primer ciclo: se va a ciclar a traves de todos los elementos de la columna motif de la db
-for (j in c(1:length(db$Motif))) {
+j <- 1
+x <- 1
+for (j in 1:length(db$Motif)) {
 	#El elemento en cuestion se almacena en una variable temporal como un vector
 	motif <- as.vector(db$Motif[j])
 	#Segundo ciclo: se hace un ciclaje en donde se detecta bases degeneradas y se sustituyen por las bases
 	#ATCG formando al final una expresión regular que puede ser evaluada
-	for (i in c(1:11)) {
-		motif <- gsub(names(deg_bases[i]), paste(c("[", deg_bases[[i]], "]"), collapse = ""), motif)
+	for (x in 1:11) {
+		motif <- gsub(names(deg_bases[x]), paste(c("[", deg_bases[[x]], "]"), collapse = ""), motif)
 	}
+	x <- 1
 	#Con la expresion regular, se obtiene la posicion de dicha expresion regular en la secuencia a analizar
-	res <- list(motif = words.pos(motif, prom_lea61 ))
+	result <- list(words.pos(motif, promoter))
 	#El resultado se guarda como un elemento de una lista
-	pos_motifs <- c(pos_motifs, res)
+	pos_motifs[j] <- result
 	#Se repite el ciclo y se continuan guardando los resultado encontrados
 }
 
 #A cada elemento de la lista se le asigna el nombre del elemento cis que le corresponde
 names(pos_motifs) <- db$Name
 #Hay elementos cis que no se encuentran y se graban como character(0). Con esta funcion se eliminan
-cis_elements_founded <- Filter(length, pos_motifs)
+cis_founded <- Filter(length, pos_motifs)
+result_tb <- plyr::ldply(cis_founded, rbind)
+result_tb[is.na(result_tb)] <- ""
+print(result_tb)
+
+
+if (test == "test") stop("Test done.")
+
+
 
 db_filtrada <- db[db$Name %in% names(cis_elements_founded),]
 
@@ -95,41 +108,6 @@ write.table(unique(df_cis$L1), file = "res_unicos_atlea61.txt", quote = FALSE,
 #Se hace un grep de las secuencias unicas encontradas sobre la base de datos.
 #grep -A3 -wf inicio.txt place_seq_final.txt 
 
-
-#GRÁFICA CON PLOT
-{
-jpeg(filename = "plot_prom_lea45.jpeg", units = "cm", width = 10, height = 6, res = 1000 )
-plot(x = c(-400,0), y = c(0,0), frame.plot = FALSE, axes = FALSE, xlab = "", ylab = "",
-		 pch = "|")
-points(x = c(-400,0), y = c(0,0), type = "l")
-
-c = 1
-temp_colors <- rainbow(length(cis_elements_founded))
-for(l in cis_elements_founded) {
-	points(x = l*-1, y = rep(0.15, length(l)), pch = 6, cex = 0.5, col = temp_colors[c])
-	text(x = l*-1, y = rep(0.25, length(l)), labels = names(cis_elements_founded[c]), cex = 0.1, 
-			 srt = 90)
-	c = c + 1
-}
-axis(side = 1, seq(-400, 0,  by = 20), 
-		 labels = seq(-400 , 0,  by = 20),  line = 0, las = 2, cex.axis = 0.5)
-dev.off()
-}
-
-#GRAFICA CON GGPLOT
-{
-ggplot(data = df_cis_ordered, aes(x = value, y = y + 0.075)) + 
-	ylim(-0.5,0.5) +
-	ylab("") +
-	scale_y_discrete(breaks = NULL) +
-	geom_point(shape = 6) + 
-	geom_hline(yintercept = 0) +
-	scale_x_reverse() +
-	theme_bw() +
-	theme(panel.grid = element_blank())
-ggsave(filename = "ggplot_prom_lea45.jpeg", device = "jpeg", units = "cm", width = 10, height = 3, 
-			 dpi = 1000)
-}
 
 
 
