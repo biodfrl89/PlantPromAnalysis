@@ -1,0 +1,396 @@
+ABFs binding site motif
+A plant leucine zipper protein that recognizes an abscisic acid response element
+CACGTGGC
+
+ABRE binding site motif
+ABFs, a family of ABA-responsive element binding factors
+(C/T)ACGTGGC
+
+ABRE-like binding site motif
+Molecular responses to dehydration and low temperature
+(C/G/T)ACGTG(G/T)(A/C)
+
+ACE promoter motif
+Identification of UV/blue light-response elements in the Arabidopsis thaliana chalcone synthase promoter using a homologous protoplast transient expression system
+GACACGTAGA
+
+AG binding site motif
+Nucleotide sequences recognized by the AGAMOUS MADS domain of Arabidopsis thaliana in vitro
+TT(A/G/T)CC(A/T)(A/T)(A/T)(A/T)(A/T)(A/T)GG(A/C/T)
+
+AG BS in AP3
+The CArG boxes in the promoter of the Arabidopsis floral organ identity gene APETALA3 mediate diverse regulatory effects
+CCATTTTTAGT
+
+AG BS in SUP
+Dimerization specificity of Arabidopsis MADS domain homeotic proteins APETALA1, APETALA3, PISTILLATA, and AGAMOUS
+CCATTTTTGG
+
+AGL1 binding site motif
+DNA binding properties of two Arabidopsis MADS domain proteins: binding consensus and dimer formation
+NTT(A/G/T)CC(A/T)(A/T)(A/T)(A/T)NNGG(A/T)AAN
+
+AGL2 binding site motif
+DNA binding properties of two Arabidopsis MADS domain proteins: binding consensus and dimer formation
+NN(A/T)NCCA(A/T)(A/T)(A/T)(A/T)T(A/G)G(A/T)(A/T)AN
+
+AGL3 binding site motif
+The Arabidopsis MADS-box gene AGL3 is widely expressed and encodes a sequence-specific DNA-binding protein
+TT(A/T)C(C/T)A(A/T)(A/T)(A/T)(A/T)T(A/G)G(A/T)AA
+
+AP1 BS in AP3
+The CArG boxes in the promoter of the Arabidopsis floral organ identity gene APETALA3 mediate diverse regulatory effects
+CCATTTTTAG
+
+AP1 BS in SUP
+Dimerization specificity of Arabidopsis MADS domain homeotic proteins APETALA1, APETALA3, PISTILLATA, and AGAMOUS
+CCATTTTTGG
+
+ARF binding site motif
+Dimerization and DNA binding of auxin response factors
+TGTCTC
+
+ARF1 binding site motif
+Dimerization and DNA binding of auxin response factors
+TGTCTC
+
+ATHB1 binding site motif
+The Athb-1 and -2 HD-Zip domains homodimerize forming complexes of different DNA binding specificities
+CAAT(A/T)ATTG
+
+ATHB2 binding site motif
+The Athb-1 and -2 HD-Zip domains homodimerize forming complexes of different DNA binding specificities
+CAAT(C/G)ATTG
+
+ATHB5 binding site motif
+DNA-binding and dimerization preferences of Arabidopsis homeodomain-leucine zipper transcription factors in vitro
+CAATNATTG
+
+ATHB6 binding site motif
+Homeodomain protein ATHB6 is a target of the protein phosphatase ABI1 and regulates hormone responses in Arabidopsis
+CAATTATTA
+
+AtMYB2 BS in RD22
+Role of Arabidopsis MYC and MYB homologs in drought- and abscisic acid-regulated gene expression.
+CTAACCA
+
+AtMYC2 BS in RD22
+Role of Arabidopsis MYC and MYB homologs in drought- and abscisic acid-regulated gene expression.
+CACATG
+
+Box II promoter motif
+Transcriptional activation by Arabidopsis GT-1 may be through interaction with TFIIA-TBP-TATA complex
+GGTTAA
+
+CArG promoter motif
+Antagonistic regulation of flowering-time gene SOC1 by CONSTANS and FLC via separate promoter motifs
+CC(A/T)(A/T)(A/T)(A/T)(A/T)(A/T)GG
+
+CArG1 motif in AP3
+The CArG boxes in the promoter of the Arabidopsis floral organ identity gene APETALA3 mediate diverse regulatory effects.
+GTTTACATAAATGGAAAA
+
+CArG2 motif in AP3
+The CArG boxes in the promoter of the Arabidopsis floral organ identity gene APETALA3 mediate diverse regulatory effects.
+CTTACCTTTCATGGATTA
+
+CArG3 motif in AP3
+The CArG boxes in the promoter of the Arabidopsis floral organ identity gene APETALA3 mediate diverse regulatory effects.
+CTTTCCATTTTTAGTAAC
+
+CBF1 BS in cor15a
+Determinants in the sequence specific binding of two plant transcription factors, CBF1 and NtERF2, to the DRE and GCC motifs.
+TGGCCGAC
+
+CBF2 binding site motif
+The cis-regulatory element CCACGTGG is involved in ABA and water-stress responses of the maize gene rab28.
+CCACGTGG
+
+CCA1 binding site motif
+A myb-related transcription factor is involved in the phytochrome regulation of an Arabidopsis Lhcb gene
+AA(A/C)AATCT
+
+CCA1 motif1 BS in CAB1
+A myb-related transcription factor is involved in the phytochrome regulation of an Arabidopsis Lhcb gene.
+AAACAATCTA
+
+CCA1 motif2 BS in CAB1
+A myb-related transcription factor is involved in the phytochrome regulation of an Arabidopsis Lhcb gene.
+AAAAAAAATCTATGA
+
+DPBF1&2 binding site motif
+Isolation of a novel class of bZIP transcription factors that interact with ABA-responsive and embryo-specification elements in the Dc3 promoter using a modified yeast one-hybrid system
+ACACNNG
+
+DRE promoter motif
+Improving plant drought, salt, and freezing tolerance by gene transfer of a single stress-inducible transcription factor
+TACCGACAT
+
+DREB1&2 BS in rd29a
+Improving plant drought, salt, and freezing tolerance by gene transfer of a single stress-inducible transcription factor
+TACCGACAT
+
+DRE-like promoter motif
+The Expression Profile Matrix of Arabidopsis Transcription Factor Genes Suggests Their Putative Functions in Response to Environmental Stresses
+(A/G/T)(A/G)CCGACN(A/T)
+
+E2F binding site motif
+Cell cycle regulation of the tobacco ribonucleotide reductase small subunit gene is mediated by E2F-like elements
+TTTCCCGC
+
+E2F/DP BS in AtCDC6
+Arabidopsis E2F1 binds a sequence present in the promoter of S-phase-regulated gene AtCDC6 and is a member of a multigene family with differential activities.
+TTTCCCGC
+
+E2F-varient binding site motif
+A genome-wide identification of E2F-regulated genes in Arabidopsis
+TCTCCCGCC
+
+EIL1 BS in ERF1
+Nuclear events in ethylene signaling: a transcriptional cascade mediated by ETHYLENE-INSENSITIVE3 and ETHYLENE-RESPONSE-FACTOR1
+TTCAAGGGGGCATGTATCTTGAA
+
+EIL2 BS in ERF1
+Nuclear events in ethylene signaling: a transcriptional cascade mediated by ETHYLENE-INSENSITIVE3 and ETHYLENE-RESPONSE-FACTOR1
+TTCAAGGGGGCATGTATCTTGAA
+
+EIL3 BS in ERF1
+Nuclear events in ethylene signaling: a transcriptional cascade mediated by ETHYLENE-INSENSITIVE3 and ETHYLENE-RESPONSE-FACTOR1
+TTCAAGGGGGCATGTATCTTGAA
+
+EIN3 BS in ERF1
+Nuclear events in ethylene signaling: a transcriptional cascade mediated by ETHYLENE-INSENSITIVE3 and ETHYLENE-RESPONSE-FACTOR1
+GGATTCAAGGGGGCATGTATCTTGAATCC
+
+ERE promoter motif
+Identification of an ethylene-responsive region in the promoter of a tobacco class I chitinase gene
+TAAGAGCCGCC
+
+ERF1 BS in AtCHI-B
+Nuclear events in ethylene signaling: a transcriptional cascade mediated by ETHYLENE-INSENSITIVE3 and ETHYLENE-RESPONSE-FACTOR1
+GCCGCC
+
+EveningElement promoter motif
+Orchestrated transcription of key pathways in Arabidopsis by the circadian clock
+AAAATATCT
+
+GATA promoter motif
+Arabidopsis thaliana GATA factors: organisation, expression and DNA-binding characteristics
+(A/T)GATA(G/A)
+
+GBF1/2/3 BS in ADH1
+Characterization of a maize G-box binding factor that is induced by hypoxia
+CCACGTGG
+
+G-box promoter motif
+Isolation and characterization of a fourth Arabidopsis thaliana G-box-binding factor, which has similarities to Fos oncoprotein
+CACGTG
+
+GCC-box promoter motif
+Molecular responses to dehydration and low temperature
+GCCGCC
+
+GT promoter motif
+Sequence-specific interactions of a pea nuclear factor with light-responsive elements upstream of the rbcS-3A gene.
+TGTGTGGTTAATATG
+
+Hexamer promoter motif
+Identification of cis-elements regulating the expression of an Arabidopsis histone H4 gene
+CCGTCG
+
+HSEs binding site motif
+Arabidopsis and the heat stress transcription factor world: how many heat stress transcription factors do we need?
+AGAANNTTCT
+
+Ibox promoter motif
+An evolutionarily conserved protein binding sequence upstream of a plant light-regulated gene
+GATAAG
+
+JASE1 motif in OPR1
+Identical promoter elements are involved in regulation of the OPR1 gene by senescence and jasmonic acid in Arabidopsis
+CGTCAATGAA
+
+JASE2 motif in OPR2
+Identical promoter elements are involved in regulation of the OPR1 gene by senescence and jasmonic acid in Arabidopsis
+CATACGTCGTCAA
+
+L1-box promoter motif
+Identification of a cis-regulatory element for L1 layer-specific gene expression, which is targeted by an L1-specific homeodomain protein
+TAAATG(C/T)A
+
+LS5 promoter motif
+The Arabidopsis NPR1/NIM1 protein enhances the DNA binding activity of a subgroup of the TGA family of bZIP transcription factors
+ACGTCATAGA
+
+LS7 promoter motif
+The Arabidopsis NPR1/NIM1 protein enhances the DNA binding activity of a subgroup of the TGA family of bZIP transcription factors
+TCTACGTCAC
+
+LTRE promoter motif
+Differential expression of two related, low-temperature-induced genes in Arabidopsis thaliana (L.) Heynh
+ACCGACA
+
+MRE motif in CHS
+Identification of UV/blue light-response elements in the Arabidopsis thaliana chalcone synthase promoter using a homologous protoplast transient expression system
+TCTAACCTACCA
+
+MYB binding site promoter
+A flower-specific Myb protein activates transcription of phenylpropanoid biosynthetic genes
+(A/C)ACC(A/T)A(A/C)C
+
+MYB1 binding site motif
+Isolation and characterization of a fourth Arabidopsis thaliana G-box-binding factor, which has similarities to Fos oncoprotein
+(A/C)TCC(A/T)ACC
+
+MYB2 binding site motif
+MYB transcription factors in plants
+TAACT(G/C)GTT
+
+MYB3 binding site motif
+Expression profile matrix of Arabidopsis transcription factor genes suggests their putative functions in response to environmental stresses.
+TAACTAAC
+
+MYB4 binding site motif
+Expression profile matrix of Arabidopsis transcription factor genes suggests their putative functions in response to environmental stresses.
+A(A/C)C(A/T)A(A/C)C
+
+Nonamer promoter motif
+Identification of cis-elements regulating the expression of an Arabidopsis histone H4 gene
+AGATCGACG
+
+OBF4,5 BS in GST6
+The promoter of a H202-inducible, Arabidopsis glutathione S-transferase gene contains closely linked OBF- and OBP1-binding sites.
+ATCTTATGTCATTGATGACGACCTCC
+
+OBP-1,4,5 BS in GST6
+The promoter of a H202-inducible, Arabidopsis glutathione S-transferase gene contains closely linked OBF- and OBP1-binding RT
+TACACTTTTGG
+
+OCS promoter motif
+The ocs-element is a component of the promoters of several T-DNA and plant viral genes
+TGACG(C/T)AAG(C/G)(A/G)(A/C)T(G/T)ACG(C/T)(A/C)(A/C)
+
+octamer promoter motif
+Nucleotide sequences of two corn histone H3 genes. Genomic organization of the corn histone H3 and H4 genes
+CGCGGATC
+
+PI promoter motif
+Promoter analysis of the nuclear gene encoding the chloroplast glyceraldehyde-3-phosphate dehydrogenase B subunit of Arabidopsis thaliana
+GTGATCAC
+
+PII promoter motif
+Promoter analysis of the nuclear gene encoding the chloroplast glyceraldehyde-3-phosphate dehydrogenase B subunit of Arabidopsis thaliana
+TTGGTTTTGATCAAAACCAA
+
+PRHA BS in PAL1
+Developmental and auxin-induced expression of the Arabidopsis prha homeobox gene
+TAATTGACTCAATTA
+
+RAV1-A binding site motif
+RAV1, a novel DNA-binding protein, binds to bipartite recognition sequence through two distinct DNA-binding domains uniquely found in higher plants
+CAACA
+
+RAV1-B binding site motif
+RAV1, a novel DNA-binding protein, binds to bipartite recognition sequence through two distinct DNA-binding domains uniquely found in higher plants
+CACCTG
+
+RY-repeat promoter motif
+RY repeats are conserved in the 5 prime-flanking region of legume seed protein genes
+CATGCATG
+
+SBP-box promoter motif
+Molecular characterisation of the Arabidopsis SBP-box genes
+TNCGTACAA
+
+T-box promoter motif
+Promoter analysis of the nuclear gene encoding the chloroplast glyceraldehyde-3-phosphate dehydrogenase B subunit of Arabidopsis thaliana
+ACTTTG
+
+TEF-box promoter motif
+Plant interstitial telomere mitifs participate in the control of gene expression in root meristems
+AGGGGCATAATGGTAA
+
+TELO-box promoter motif
+Plant interstitial telomere mitifs participate in the control of gene expression in root meristems
+AAACCCTAA
+
+TGA1 binding site motif
+TGA1 and G-box binding factors: two distinct classes of Arabidopsis leucine zipper proteins compete for the G-box-like element TGACGTGG
+TGACGTGG
+
+W-box promoter motif
+Evidence for an important role of WRKY DNA binding proteins in the regulation of NPR1 gene expression
+TTGAC
+
+Z-box promoter motif
+Identification of upstream regulatory elements involved in the developmental expression of the Arabidopsis thaliana cab1 gene
+ATACGTGT
+
+AG BS in SPL/NOZ
+The homeotic protein AGAMOUS controls microsporogenesis by regulation of  SPOROCYTELESS
+AAAACAGAATAGGAAA
+
+Bellringer/replumless/pennywise BS1 IN AG
+Repression of AGAMOUS by BELLRINGER in Floral and Inflorescence Meristems 
+AAATTAAA
+
+Bellringer/replumless/pennywise BS2 IN AG
+Repression of AGAMOUS by BELLRINGER in Floral and Inflorescence Meristems 
+AAATTAGT
+
+Bellringer/replumless/pennywise BS3 IN AG
+Repression of AGAMOUS by BELLRINGER in Floral and Inflorescence Meristems 
+ACTAATTT
+
+AGL15 BS in AtGA2ox6
+The Embryo MADS Domain Protein AGAMOUS-LIKE15 Directly Regulates Expression of a Gene Encoding an Enzyme Involved in Gibberellin Metabolism
+CCAATTTAATGG
+
+ATB2/AtbZIP53/AtbZIP44/GBF5 BS in ProDH
+A Novel Subgroup of bZIP Proteins Functions as Transctiptional Activators in Hypsosmolarity-Responsive Expression of the ProDH gene in Arabidopsis
+ACTCAT
+
+LFY BS in AP3
+Regulation of APETALA3 floral homeotic gene expression by meristem identity genes
+CTTAAACCCTAGGGGTAAT
+
+SORLREP1
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+TT[AT]TACTAGT
+
+SORLREP2
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+ATAAAACGT
+
+SORLREP3
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+TGTATATAT
+
+SORLREP4
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+CTCCTAATT
+
+SORLREP5
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+TTGCATGACT
+
+SORLIP1
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+AGCCAC
+
+SORLIP2
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+GGGCC
+
+SORLIP3
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+CTCAAGTGA
+
+SORLIP4
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+GTATGATGG
+
+SORLIP5
+Identification of key promoter motifs involved in the network of light-regulated gene expression by combined analysis of genomic sequence and microarray data.
+GAGTGAG
+
