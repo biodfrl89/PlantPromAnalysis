@@ -4,7 +4,8 @@
 
 This package is designed to analyze DNA sequence considered as promoter regions of genes. It use the published databases from PLACE -- Plant cis-acting regulatory DNA elements¹ and AtcisDB - Arabidopsis cis-regulatory element database². 
 
-##Introduction
+## Introduction
+
 The Package includes a Rscript which is the program that must be launched from terminal with the appropiate arguments. 
 
 To make the program run, use this syntax:
