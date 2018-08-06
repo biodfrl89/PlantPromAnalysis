@@ -22,17 +22,18 @@ library(seqinr)
 
 test="test"
 
-#Se carga la base de datos PLACE y se suprime la primer columna que tiene un dato desconocido sin sentido
+#PLACE database is loaded, first column is eliminated
 db <- read.table(file = "DATABASES/place_raw.txt", header = FALSE)
 db$V1 <- NULL
-#Se nombran las columnas
+#Column names are edited 
 colnames(db) <- c("Name", "Motif", "Length", "ID")
-#Se lee la secuencia a analizar y se cambia a mayusculas para que no haya problema
+#Promoter sequence is read according to the filename argument. Typecase is changed to upper
 promoter <- read.fasta(file = opt$file, seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
-promoter <- read.fasta(file = "atlea45.fasta", seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
-promoter <- toupper(promoter)
+#promoter <- read.fasta(file = "atlea45.fasta", seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
+i <- 1
+for (i in 1: length(promoter)) promoter[[i]] <- toupper(promoter[[i]])
 
-#ASIGNACION DE BASES DEGENERADAS
+#Degenerated nucleotides are designated
 {
   deg_bases <- list(W = c("A", "T"),
                     S = c("C", "G"),
@@ -48,50 +49,49 @@ promoter <- toupper(promoter)
   )
 }
 
+dir.create(path = paste0("./Results_for_",opt$file))
 #PREPARACIÓN DEL MOTIVO A BUSCAR
 #Se declaran las variables vacias a utilizar
 pos_motifs <- list(0)
 #Primer ciclo: se va a ciclar a traves de todos los elementos de la columna motif de la db
+a <- 1
 j <- 1
 x <- 1
-for (j in 1:length(db$Motif)) {
-	#El elemento en cuestion se almacena en una variable temporal como un vector
-	motif <- as.vector(db$Motif[j])
-	#Segundo ciclo: se hace un ciclaje en donde se detecta bases degeneradas y se sustituyen por las bases
-	#ATCG formando al final una expresión regular que puede ser evaluada
-	for (x in 1:11) {
-		motif <- gsub(names(deg_bases[x]), paste(c("[", deg_bases[[x]], "]"), collapse = ""), motif)
-	}
-	x <- 1
-	#Con la expresion regular, se obtiene la posicion de dicha expresion regular en la secuencia a analizar
-	result <- list(words.pos(motif, promoter))
-	#El resultado se guarda como un elemento de una lista
-	pos_motifs[j] <- result
-	#Se repite el ciclo y se continuan guardando los resultado encontrados
+for (a in 1:length(promoter)) {
+  for (j in 1:length(db$Motif)) {
+  	#El elemento en cuestion se almacena en una variable temporal como un vector
+  	motif <- as.vector(db$Motif[j])
+  	#Segundo ciclo: se hace un ciclaje en donde se detecta bases degeneradas y se sustituyen por las bases
+  	#ATCG formando al final una expresión regular que puede ser evaluada
+  	for (x in 1:11) {
+  		motif <- gsub(names(deg_bases[x]), paste(c("[", deg_bases[[x]], "]"), collapse = ""), motif)
+  	}
+  	x <- 1
+  	#Con la expresion regular, se obtiene la posicion de dicha expresion regular en la secuencia a analizar
+  	result <- list(words.pos(motif, promoter[[a]]))
+  	#El resultado se guarda como un elemento de una lista
+  	pos_motifs[j] <- result
+  	#Se repite el ciclo y se continuan guardando los resultado encontrados
+  }
+  #A cada elemento de la lista se le asigna el nombre del elemento cis que le corresponde
+  names(pos_motifs) <- db$Name
+  #Hay elementos cis que no se encuentran y se graban como character(0). Con esta funcion se eliminan
+  cis_founded <- Filter(length, pos_motifs)
+  prom_len <- nchar(promoter[[a]])
+  result_tb <- lapply(cis_founded, function(n) n-prom_len)
+  result_tb <- plyr::ldply(result_tb, rbind)
+  result_tb[is.na(result_tb)] <- ""
+
+  setwd(paste0("./Results_for_",opt$file))
+  write.table(result_tb, file = paste0(names(promoter[a]),"_results_tb.txt"), quote = FALSE, 
+              row.names = FALSE, col.names = FALSE)
+  write.table(result_tb$.id, file = paste0(names(promoter[a]),"_unique.txt"), quote = FALSE, 
+  						row.names = FALSE, col.names = FALSE)
+  print(paste0("Printing the table for the promoter of ", names(promoter[a])))
+  setwd("..")
 }
 
-#A cada elemento de la lista se le asigna el nombre del elemento cis que le corresponde
-names(pos_motifs) <- db$Name
-#Hay elementos cis que no se encuentran y se graban como character(0). Con esta funcion se eliminan
-cis_founded <- Filter(length, pos_motifs)
-result_tb <- plyr::ldply(cis_founded, rbind)
-result_tb[is.na(result_tb)] <- ""
-print(result_tb)
-
-
-if (test == "test") stop("Test done.")
-
-
-
-db_filtrada <- db[db$Name %in% names(cis_elements_founded),]
-
-
-df_cis <-reshape2::melt(cis_elements_founded)
-df_cis <- df_cis[c(2,1)]
-df_cis_ordered <- df_cis[order(df_cis$value),]
-df_cis_ordered$y <- rep(0, length(df_cis_ordered$value))
-write.table(unique(df_cis$L1), file = "res_unicos_atlea61.txt", quote = FALSE, 
-						row.names = FALSE, col.names = FALSE)
+print("Printing done")
 
 #Para convertir el archivo de resultados en expresiones regulares
 #sed -e 's/^/\^/' res_unicos_atlea61.txt >inicio.txt 
@@ -108,7 +108,18 @@ write.table(unique(df_cis$L1), file = "res_unicos_atlea61.txt", quote = FALSE,
 #Se hace un grep de las secuencias unicas encontradas sobre la base de datos.
 #grep -A3 -wf inicio.txt place_seq_final.txt 
 
+db_exp <- readLines(con = "DATABASES/place_database.txt")
+res_uni <- scan("Results_for_prom_atlea4.fasta/AtLEA4-1_unique.txt", what = "character")
+res_uni <- paste0("^", res_uni)
 
+db_exp_filter <- ""
+result <- vector(mode = "character")
+for (i in 1:length(res_uni)) {
+  result <- db_exp[grep(res_uni[i], db_exp) + c(0:3)]
+  result <- append(result, "\n")
+  db_exp_filter <- append(x = db_exp_filter, values = result)
+}
 
+writeLines(db_exp_filter, con = "test_db.txt")
 
-
+if (test == "test") stop("Test done.")
