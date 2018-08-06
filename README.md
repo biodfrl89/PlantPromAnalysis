@@ -12,7 +12,7 @@ To make the program run, use this syntax:
 
 	Rscript Rscript_PlantPromAnalysis.R [-f,--file] [-o, --out] [-db, --database] [-h, --help]
 
-The script must take at least the '--file' argument which must be a fasta file. It is recommended to keep the headers of each sequence is as short as possible. Make sure there are no headers duplicated, which may cause the program to overwrite the result of the sequences with the same header.
+The script must take at least the `--file` argument which must be a fasta file. It is recommended to keep the headers of each sequence is as short as possible. Make sure there are no headers duplicated, which may cause the program to overwrite the result of the sequences with the same header.
 
 After running the program, a new directory will be created with the results of the analysis. Each file contains a table with the relative position (closer to 0 mean closer to the gene of interest) of each cis element.  
 
