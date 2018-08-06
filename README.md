@@ -2,7 +2,7 @@
 
 ## Description
 
-This package is designed to analyze DNA sequence considered as promoter regions of genes. It use the published databases from PLACE -- Plant cis-acting regulatory DNA elements¹ and AtcisDB - Arabidopsis cis-regulatory element database². 
+This package is designed to analyze DNA sequence considered as promoter regions of genes from plants. It uses the published databases from PLACE -- Plant cis-acting regulatory DNA elements¹ and AtcisDB - Arabidopsis cis-regulatory element database². 
 
 ## Introduction
 
@@ -18,5 +18,5 @@ After running the program, a new directory will be created with the results of t
 
 ## References
 
-¹ Higo, K., Y. Ugawa, M. Iwamoto and T. Korenaga (1999) Plant cis-acting regulatory DNA elements (PLACE) database. Nucleic Acids Res. 27 (1): 297-300.
-² https://agris-knowledgebase.org/AtcisDB/
+¹ Higo, K., Y. Ugawa, M. Iwamoto and T. Korenaga (1999) Plant cis-acting regulatory DNA elements (PLACE) database. Nucleic Acids Res. 27 (1): 297-300. [PLACE Database] (http://www.dna.affrc.go.jp/htdocs/PLACE/)
+² https://agris-knowledgebase.org/AtcisDB/ [AtCIS Database] (https://agris-knowledgebase.org/AtcisDB/)
