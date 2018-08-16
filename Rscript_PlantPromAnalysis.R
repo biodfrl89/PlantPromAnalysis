@@ -27,11 +27,6 @@ db <- read.table(file = "DATABASES/place_raw.txt", header = FALSE)
 db$V1 <- NULL
 #Column names are edited 
 colnames(db) <- c("Name", "Motif", "Length", "ID")
-#Promoter sequence is read according to the filename argument. Typecase is changed to upper
-promoter <- read.fasta(file = opt$file, seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
-#promoter <- read.fasta(file = "atlea45.fasta", seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
-i <- 1
-for (i in 1: length(promoter)) promoter[[i]] <- toupper(promoter[[i]])
 
 #Degenerated nucleotides are designated
 {
@@ -49,6 +44,16 @@ for (i in 1: length(promoter)) promoter[[i]] <- toupper(promoter[[i]])
   )
 }
 
+#Promoter sequence is read according to the filename argument. Typecase is changed to upper
+promoter <- read.fasta(file = opt$file, seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
+#promoter <- read.fasta(file = "atlea45.fasta", seqtype = "DNA", as.string = TRUE, set.attributes = FALSE)
+i <- 1
+for (i in 1: length(promoter)) promoter[[i]] <- toupper(promoter[[i]])
+
+if ( file.exists( paste0( "./Results_for_",opt$file))){
+  unlink(paste0("./Results_for_",opt$file), recursive = TRUE)
+}
+  
 dir.create(path = paste0("./Results_for_",opt$file))
 #PREPARACIÓN DEL MOTIVO A BUSCAR
 #Se declaran las variables vacias a utilizar
@@ -89,27 +94,11 @@ for (a in 1:length(promoter)) {
   						row.names = FALSE, col.names = FALSE)
   print(paste0("Printing the table for the promoter of ", names(promoter[a])))
   setwd("..")
-}
 
-print("Printing done")
-
-#Para convertir el archivo de resultados en expresiones regulares
-#sed -e 's/^/\^/' res_unicos_atlea61.txt >inicio.txt 
-
-#Para preparar la base de datos con la información y que quede lista para su analisis
-#cat place.seq | grep '^ID\|^DE\|^KW\|^SQ\|^//' -B1 | grep '^XX\|^--\|^SQ' -v | sed 's/^  /SQ/g'  
-	#>char_DE_descriptors.txt
-#Se hace lo mismo para los elementos deseados
-
-#Para univer los archivos generados y dejar la base de datos prepara donde se realizara el grep.
-#paste -d '\n' char_ID_geneid.txt char_DE_descriptors.txt char_KW_keywords.txt char_SQ_sequence.txt | 
-	#sed '0~4 s/$/\n/g' >place_seq_final.txt
-
-#Se hace un grep de las secuencias unicas encontradas sobre la base de datos.
-#grep -A3 -wf inicio.txt place_seq_final.txt 
+print("Printing of DF and unique is done")
 
 db_exp <- readLines(con = "DATABASES/place_database.txt")
-res_uni <- scan("Results_for_prom_atlea4.fasta/AtLEA4-1_unique.txt", what = "character")
+res_uni <- scan(paste0("./Results_for_",opt$file,"/",names(promoter[a]),"_unique.txt"), what = "character")
 res_uni <- paste0("^", res_uni)
 
 db_exp_filter <- ""
@@ -120,6 +109,22 @@ for (i in 1:length(res_uni)) {
   db_exp_filter <- append(x = db_exp_filter, values = result)
 }
 
-writeLines(db_exp_filter, con = "test_db.txt")
+writeLines(db_exp_filter, con = paste0("./Results_for_",opt$file,"/Prom_",names(promoter[a]),"cis_detailed.txt"))
+print("Printing of details is done")
 
-if (test == "test") stop("Test done.")
+}
+
+#Para convertir el archivo de resultados en expresiones regulares
+#sed -e 's/^/\^/' res_unicos_atlea61.txt >inicio.txt 
+
+#Para preparar la base de datos con la información y que quede lista para su analisis
+#cat place.seq | grep '^ID\|^DE\|^KW\|^SQ\|^//' -B1 | grep '^XX\|^--\|^SQ' -v | sed 's/^  /SQ/g'  
+#>char_DE_descriptors.txt
+#Se hace lo mismo para los elementos deseados
+
+#Para univer los archivos generados y dejar la base de datos prepara donde se realizara el grep.
+#paste -d '\n' char_ID_geneid.txt char_DE_descriptors.txt char_KW_keywords.txt char_SQ_sequence.txt | 
+#sed '0~4 s/$/\n/g' >place_seq_final.txt
+
+#Se hace un grep de las secuencias unicas encontradas sobre la base de datos.
+#grep -A3 -wf inicio.txt place_seq_final.txt 
